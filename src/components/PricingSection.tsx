@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Check, Star, Monitor } from "lucide-react";
+import { Check, Star, Monitor, MessageCircle, CreditCard } from "lucide-react";
 import { useState } from "react";
 
 const PricingSection = () => {
@@ -215,6 +215,48 @@ const PricingSection = () => {
                 >
                   Get Started
                 </Button>
+
+                {/* Payment Methods */}
+                <div className="mt-4 space-y-3">
+                  {/* Payment Icons */}
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="text-xs text-muted-foreground">We accept:</div>
+                  </div>
+                  <div className="flex items-center justify-center space-x-3">
+                    {/* Visa */}
+                    <div className="w-10 h-6 bg-blue-600 rounded flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">VISA</span>
+                    </div>
+                    {/* Mastercard */}
+                    <div className="w-10 h-6 bg-red-600 rounded flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">MC</span>
+                    </div>
+                    {/* PayPal */}
+                    <div className="w-10 h-6 bg-blue-500 rounded flex items-center justify-center">
+                      <span className="text-white text-xs font-bold">PP</span>
+                    </div>
+                    {/* Apple Pay */}
+                    <div className="w-10 h-6 bg-black rounded flex items-center justify-center">
+                      <span className="text-white text-xs">🍎</span>
+                    </div>
+                    {/* Google Pay */}
+                    <div className="w-10 h-6 bg-gray-700 rounded flex items-center justify-center">
+                      <span className="text-white text-xs">G</span>
+                    </div>
+                  </div>
+
+                  {/* WhatsApp Support */}
+                  <div className="pt-3 border-t border-border">
+                    <Button
+                      variant="outline"
+                      size="sm"
+                      className="w-full bg-green-600 hover:bg-green-700 border-green-600 text-white hover:text-white"
+                    >
+                      <MessageCircle className="w-4 h-4 mr-2" />
+                      WhatsApp Support
+                    </Button>
+                  </div>
+                </div>
               </CardContent>
             </Card>
           ))}

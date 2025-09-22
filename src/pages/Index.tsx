@@ -8,6 +8,7 @@ import CustomerReviews from "@/components/CustomerReviews";
 import HowToBuy from "@/components/HowToBuy";
 import WorldChannels from "@/components/WorldChannels";
 import HaveQuestions from "@/components/HaveQuestions";
+import ContentSection from "@/components/ContentSection";
 import LatestBlogPosts from "@/components/LatestBlogPosts";
 import Footer from "@/components/Footer";
 
@@ -25,6 +26,7 @@ const Index = () => {
         <HowToBuy />
         <WorldChannels />
         <HaveQuestions />
+        <ContentSection />
         <LatestBlogPosts />
       </main>
       <Footer />

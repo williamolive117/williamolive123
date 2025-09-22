@@ -96,11 +96,10 @@ const WorldChannels = () => {
               {channelMarkers.map((marker, index) => (
                 <div
                   key={marker.id}
-                  className="absolute group cursor-pointer animate-fade-in-up"
+                  className="absolute group cursor-pointer"
                   style={{ 
                     left: marker.left, 
-                    top: marker.top,
-                    animationDelay: `${index * 0.1}s`
+                    top: marker.top
                   }}
                 >
                   {/* Marker Pin */}
@@ -157,23 +156,7 @@ const WorldChannels = () => {
         </div>
       </div>
 
-      {/* CSS for animations */}
-      <style jsx>{`
-        @keyframes fade-in-up {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
 
-        .animate-fade-in-up {
-          animation: fade-in-up 0.8s ease-out forwards;
-        }
-      `}</style>
     </section>
   );
 };
