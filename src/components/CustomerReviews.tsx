@@ -54,8 +54,7 @@ const CustomerReviews = () => {
           {reviews.map((review) => (
             <div
               key={review.id}
-              className="group relative bg-gradient-to-br from-gray-900/80 to-black/60 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-6 hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-500 hover:transform hover:scale-105 animate-fade-in"
-              style={{ animationDelay: `${review.id * 0.1}s` }}
+              className="group relative bg-gradient-to-br from-gray-900/80 to-black/60 backdrop-blur-sm border border-gray-800/50 rounded-2xl p-6 hover:shadow-2xl hover:shadow-red-600/20 transition-all duration-500 hover:transform hover:scale-105"
             >
               {/* Background Glow Effect */}
               <div className="absolute inset-0 bg-gradient-to-br from-red-600/5 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -119,23 +118,7 @@ const CustomerReviews = () => {
         </div>
       </div>
 
-      {/* CSS for fade-in animation */}
-      <style jsx>{`
-        @keyframes fade-in {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
 
-        .animate-fade-in {
-          animation: fade-in 0.6s ease-out forwards;
-        }
-      `}</style>
     </section>
   );
 };

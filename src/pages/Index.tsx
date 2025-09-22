@@ -3,9 +3,12 @@ import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
 import DeviceCompatibility from "@/components/DeviceCompatibility";
+import FreeTrial from "@/components/FreeTrial";
 import CustomerReviews from "@/components/CustomerReviews";
+import HowToBuy from "@/components/HowToBuy";
 import WorldChannels from "@/components/WorldChannels";
 import HaveQuestions from "@/components/HaveQuestions";
+import LatestBlogPosts from "@/components/LatestBlogPosts";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -17,9 +20,12 @@ const Index = () => {
         <FeaturesSection />
         <PricingSection />
         <DeviceCompatibility />
+        <FreeTrial />
         <CustomerReviews />
+        <HowToBuy />
         <WorldChannels />
         <HaveQuestions />
+        <LatestBlogPosts />
       </main>
       <Footer />
     </div>
