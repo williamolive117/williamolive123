@@ -14,21 +14,7 @@ const Header = () => {
     { name: "FAQ", href: "#faq" },
   ];
 
-  // Channel logos for carousel - easily configurable
-  const channelLogos = [
-    { name: "BBC", logo: "🏴󠁧󠁢󠁥󠁮󠁧󠁿 BBC" },
-    { name: "Sky Sports", logo: "⚽ SKY" },
-    { name: "Netflix", logo: "🎬 NET" },
-    { name: "Amazon Prime", logo: "📺 APV" },
-    { name: "Disney+", logo: "🏰 DIS" },
-    { name: "HBO Max", logo: "🎭 HBO" },
-    { name: "ESPN", logo: "🏈 ESPN" },
-    { name: "Discovery", logo: "🔬 DISC" },
-    { name: "National Geographic", logo: "🌍 NAT" },
-    { name: "History Channel", logo: "🏛️ HIST" },
-    { name: "Comedy Central", logo: "😂 COM" },
-    { name: "MTV", logo: "🎵 MTV" },
-  ];
+
 
   return (
     <header className="bg-background/95 backdrop-blur-sm border-b border-border sticky top-0 z-50">
@@ -102,65 +88,6 @@ const Header = () => {
           </div>
         )}
       </nav>
-
-      {/* Channel Logos Carousel */}
-      <div className="bg-gray-900/50 backdrop-blur-sm border-t border-gray-800/50 py-4 overflow-hidden">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-4">
-            <span className="text-sm text-gray-400">Available Channels:</span>
-          </div>
-          
-          {/* Scrolling Logo Container */}
-          <div className="relative">
-            <div 
-              className="flex space-x-8 whitespace-nowrap"
-              style={{
-                animation: 'scroll 30s linear infinite',
-                animationDirection: 'normal'
-              }}
-              onMouseEnter={(e) => e.currentTarget.style.animationPlayState = 'paused'}
-              onMouseLeave={(e) => e.currentTarget.style.animationPlayState = 'running'}
-            >
-              {/* First set of logos */}
-              {channelLogos.map((channel, index) => (
-                <div
-                  key={`first-${index}`}
-                  className="flex-shrink-0 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg px-4 py-2 hover:bg-gray-700/50 transition-colors duration-300"
-                >
-                  <span className="text-white text-sm font-medium whitespace-nowrap">
-                    {channel.logo}
-                  </span>
-                </div>
-              ))}
-              {/* Duplicate set for seamless scrolling */}
-              {channelLogos.map((channel, index) => (
-                <div
-                  key={`second-${index}`}
-                  className="flex-shrink-0 bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-lg px-4 py-2 hover:bg-gray-700/50 transition-colors duration-300"
-                >
-                  <span className="text-white text-sm font-medium whitespace-nowrap">
-                    {channel.logo}
-                  </span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Add CSS for the scrolling animation */}
-      <style>
-        {`
-        @keyframes scroll {
-          0% {
-            transform: translateX(0);
-          }
-          100% {
-            transform: translateX(-50%);
-          }
-        }
-        `}
-      </style>
     </header>
   );
 };

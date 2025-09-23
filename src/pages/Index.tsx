@@ -1,4 +1,5 @@
 import Header from "@/components/Header";
+import ChannelLogosCarousel from "@/components/ChannelLogosCarousel";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
 import PricingSection from "@/components/PricingSection";
@@ -6,6 +7,7 @@ import DeviceCompatibility from "@/components/DeviceCompatibility";
 import FreeTrial from "@/components/FreeTrial";
 import CustomerReviews from "@/components/CustomerReviews";
 import HowToBuy from "@/components/HowToBuy";
+import InstallationGuides from "@/components/InstallationGuides";
 import WorldChannels from "@/components/WorldChannels";
 import HaveQuestions from "@/components/HaveQuestions";
 import ContentSection from "@/components/ContentSection";
@@ -17,6 +19,7 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
+        <ChannelLogosCarousel />
         <HeroSection />
         <FeaturesSection />
         <PricingSection />
@@ -24,6 +27,7 @@ const Index = () => {
         <FreeTrial />
         <CustomerReviews />
         <HowToBuy />
+        <InstallationGuides />
         <WorldChannels />
         <HaveQuestions />
         <ContentSection />
