@@ -1,17 +1,19 @@
 import { useState } from "react";
 import { Menu, X, Tv } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link, useLocation } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   const navigation = [
-    { name: "Home", href: "#home" },
-    { name: "Plans", href: "#pricing" },
-    { name: "Features", href: "#features" },
-    { name: "Devices", href: "#devices" },
-    { name: "Support", href: "#support" },
-    { name: "FAQ", href: "#faq" },
+    { name: "Home", href: "/", type: "route" },
+    { name: "Plans", href: "/pricing", type: "route" },
+    { name: "Features", href: "#features", type: "anchor" },
+    { name: "Devices", href: "#devices", type: "anchor" },
+    { name: "Support", href: "#support", type: "anchor" },
+    { name: "FAQ", href: "#faq", type: "anchor" },
   ];
 
 
@@ -21,22 +23,36 @@ const Header = () => {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="flex items-center">
+          <Link to="/" className="flex items-center">
             <Tv className="h-8 w-8 text-primary mr-2" />
             <span className="text-2xl font-bold text-foreground">IPTV UK</span>
-          </div>
+          </Link>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
             <div className="ml-10 flex items-baseline space-x-4">
               {navigation.map((item) => (
-                <a
-                  key={item.name}
-                  href={item.href}
-                  className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
-                >
-                  {item.name}
-                </a>
+                item.type === "route" ? (
+                  <Link
+                    key={item.name}
+                    to={item.href}
+                    className={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                      location.pathname === item.href 
+                        ? 'text-primary font-semibold' 
+                        : 'text-foreground hover:text-primary'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <a
+                    key={item.name}
+                    href={item.href}
+                    className="text-foreground hover:text-primary px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  >
+                    {item.name}
+                  </a>
+                )
               ))}
             </div>
           </div>
@@ -84,22 +100,45 @@ const Header = () => {
               {/* Navigation Links */}
               <div className="space-y-2">
                 {navigation.map((item, index) => (
-                  <a
-                    key={item.name}
-                    href={item.href}
-                    className="group relative flex items-center px-4 py-3 rounded-lg text-white hover:text-red-400 hover:bg-red-600/10 transition-all duration-200 border border-transparent hover:border-red-600/30"
-                    onClick={() => setIsMenuOpen(false)}
-                    style={{ animationDelay: `${index * 50}ms` }}
-                  >
-                    <div className="flex items-center space-x-3">
-                      <div className="w-2 h-2 rounded-full bg-red-600 group-hover:bg-red-400 transition-colors duration-200"></div>
-                      <span className="font-medium text-base group-hover:translate-x-1 transition-transform duration-200">
-                        {item.name}
-                      </span>
-                    </div>
-                    {/* Hover effect line */}
-                    <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0 h-0.5 bg-red-600 group-hover:w-4 transition-all duration-200"></div>
-                  </a>
+                  item.type === "route" ? (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={`group relative flex items-center px-4 py-3 rounded-lg hover:text-red-400 hover:bg-red-600/10 transition-all duration-200 border border-transparent hover:border-red-600/30 ${
+                        location.pathname === item.href 
+                          ? 'text-red-400 bg-red-600/10 border-red-600/30 font-semibold' 
+                          : 'text-white'
+                      }`}
+                      onClick={() => setIsMenuOpen(false)}
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className={`w-2 h-2 rounded-full group-hover:bg-red-400 transition-colors duration-200 ${
+                          location.pathname === item.href ? 'bg-red-400' : 'bg-red-600'
+                        }`}></div>
+                        <span className="font-medium text-base group-hover:translate-x-1 transition-transform duration-200">
+                          {item.name}
+                        </span>
+                      </div>
+                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0 h-0.5 bg-red-600 group-hover:w-4 transition-all duration-200"></div>
+                    </Link>
+                  ) : (
+                    <a
+                      key={item.name}
+                      href={item.href}
+                      className="group relative flex items-center px-4 py-3 rounded-lg text-white hover:text-red-400 hover:bg-red-600/10 transition-all duration-200 border border-transparent hover:border-red-600/30"
+                      onClick={() => setIsMenuOpen(false)}
+                      style={{ animationDelay: `${index * 50}ms` }}
+                    >
+                      <div className="flex items-center space-x-3">
+                        <div className="w-2 h-2 rounded-full bg-red-600 group-hover:bg-red-400 transition-colors duration-200"></div>
+                        <span className="font-medium text-base group-hover:translate-x-1 transition-transform duration-200">
+                          {item.name}
+                        </span>
+                      </div>
+                      <div className="absolute right-0 top-1/2 transform -translate-y-1/2 w-0 h-0.5 bg-red-600 group-hover:w-4 transition-all duration-200"></div>
+                    </a>
+                  )
                 ))}
               </div>
               
