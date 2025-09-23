@@ -23,13 +23,13 @@ const Index = () => {
         <HeroSection />
         <ChannelLogosCarousel />
         <FeaturesSection />
-        <AffiliateProgram />
         <PricingSection />
         <DeviceCompatibility />
         <FreeTrial />
         <CustomerReviews />
         <HowToBuy />
         <InstallationGuides />
+        <AffiliateProgram />
         <WorldChannels />
         <HaveQuestions />
         <ContentSection />
