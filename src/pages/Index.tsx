@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import ChannelLogosCarousel from "@/components/ChannelLogosCarousel";
 import HeroSection from "@/components/HeroSection";
 import FeaturesSection from "@/components/FeaturesSection";
+import AffiliateProgram from "@/components/AffiliateProgram";
 import PricingSection from "@/components/PricingSection";
 import DeviceCompatibility from "@/components/DeviceCompatibility";
 import FreeTrial from "@/components/FreeTrial";
@@ -19,9 +20,10 @@ const Index = () => {
     <div className="min-h-screen bg-background">
       <Header />
       <main>
-        <ChannelLogosCarousel />
         <HeroSection />
+        <ChannelLogosCarousel />
         <FeaturesSection />
+        <AffiliateProgram />
         <PricingSection />
         <DeviceCompatibility />
         <FreeTrial />

@@ -152,8 +152,8 @@ const InstallationGuides = () => {
                   </CardTitle>
                   
                   <CardDescription className="text-gray-300 text-sm leading-relaxed">
-                    <div>{guide.description}</div>
-                    <div>{guide.subtitle}</div>
+                    {guide.description}<br />
+                    {guide.subtitle}
                   </CardDescription>
                 </CardHeader>
 
