@@ -187,126 +187,219 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Deal of the Day Section */}
-      <section className="py-16 bg-gradient-to-r from-red-600/10 via-transparent to-red-600/10">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left Side - Image */}
+      {/* Deal of the Day Header Section */}
+      <section className="py-20 bg-gradient-to-b from-black via-gray-900/50 to-black relative overflow-hidden">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Left Side - Enhanced Image */}
             <div className="relative">
-              <div className="aspect-video bg-gradient-to-br from-red-600/20 to-black rounded-2xl overflow-hidden shadow-2xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-red-600/30 via-transparent to-black/80 flex items-center justify-center">
+              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+                {/* Main gradient background */}
+                <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-500 to-red-800"></div>
+                
+                {/* Overlay patterns */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/20"></div>
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+                
+                {/* Content */}
+                <div className="absolute inset-0 flex items-center justify-center">
                   <div className="text-center">
-                    <Timer className="w-16 h-16 text-red-400 mx-auto mb-4 animate-pulse" />
-                    <p className="text-white text-lg font-semibold">Special Offer</p>
-                    <p className="text-red-400 text-sm">Limited Time Only</p>
+                    <div className="bg-white/10 backdrop-blur-sm rounded-full p-6 mb-6 mx-auto w-fit">
+                      <Timer className="w-12 h-12 text-white animate-pulse" />
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Today Only</h3>
+                    <p className="text-white/90 text-lg font-medium">Special Pricing</p>
+                    <div className="mt-4 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 inline-block">
+                      <span className="text-white text-sm font-bold">24 HOURS LEFT</span>
+                    </div>
                   </div>
                 </div>
-                {/* Decorative elements */}
-                <div className="absolute top-4 right-4 w-12 h-12 bg-red-600/20 rounded-full animate-pulse"></div>
-                <div className="absolute bottom-6 left-6 w-8 h-8 bg-yellow-400/30 rounded-full animate-bounce"></div>
+                
+                {/* Floating elements */}
+                <div className="absolute top-8 right-8 w-4 h-4 bg-yellow-400 rounded-full animate-ping"></div>
+                <div className="absolute bottom-12 left-8 w-6 h-6 bg-white/30 rounded-full animate-bounce"></div>
+                <div className="absolute top-1/3 right-12 w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
               </div>
+              
+              {/* Glow effect */}
+              <div className="absolute inset-0 bg-red-600/20 rounded-3xl blur-2xl -z-10"></div>
             </div>
 
-            {/* Right Side - Deal Content */}
-            <div className="space-y-6">
-              <div className="inline-flex items-center space-x-2 bg-red-600/20 text-red-400 px-4 py-2 rounded-full">
-                <Clock className="w-4 h-4" />
-                <span className="font-semibold">Deal of the Day</span>
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl font-bold text-white">
-                <span className="text-red-600">30% OFF</span>
-              </h2>
-              
-              <h3 className="text-2xl md:text-3xl font-semibold text-white">
-                3 Months Subscription
-              </h3>
-              
-              <div className="flex items-baseline space-x-4">
-                <span className="text-4xl font-bold text-red-600">£24.99</span>
-                <span className="text-2xl text-gray-400 line-through">£49.99</span>
-              </div>
-              
-              <div className="bg-gradient-to-r from-green-600/20 to-green-400/20 border border-green-500/30 rounded-lg p-4">
-                <div className="flex items-center space-x-2 text-green-400">
-                  <Gift className="w-5 h-5" />
-                  <span className="font-semibold">Extra Offer: Get 1 Month Free!</span>
+            {/* Right Side - Clean Modern Text */}
+            <div className="space-y-8">
+              <div>
+                <div className="inline-flex items-center space-x-3 bg-red-600/10 border border-red-500/30 text-red-400 px-6 py-3 rounded-full mb-6">
+                  <Clock className="w-5 h-5" />
+                  <span className="font-bold text-lg tracking-wide">DEAL OF THE DAY</span>
                 </div>
-                <p className="text-gray-300 text-sm mt-1">
-                  Total: 4 months of premium IPTV for the price of 3
+                
+                <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
+                  <span className="block text-red-600">30%</span>
+                  <span className="block text-white">OFF</span>
+                </h1>
+              </div>
+              
+              <div className="space-y-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-white">
+                  3 Months Subscription
+                </h2>
+                
+                <div className="flex items-baseline space-x-4">
+                  <span className="text-5xl md:text-6xl font-black text-red-600">£24.99</span>
+                  <div className="space-y-1">
+                    <span className="text-2xl text-gray-400 line-through block">£49.99</span>
+                    <span className="text-green-400 text-sm font-semibold">Save £25.00</span>
+                  </div>
+                </div>
+              </div>
+              
+              <div className="bg-gradient-to-r from-green-600/20 via-green-500/20 to-green-600/20 border border-green-500/40 rounded-2xl p-6">
+                <div className="flex items-center space-x-3 text-green-400 mb-2">
+                  <Gift className="w-6 h-6" />
+                  <span className="font-bold text-lg">BONUS: Get 1 Month FREE!</span>
+                </div>
+                <p className="text-green-300 text-base">
+                  Total value: <span className="font-bold">4 months</span> of premium IPTV for the price of 3
                 </p>
               </div>
               
               <Button 
                 size="lg" 
-                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-12 py-6 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-red-600/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
               >
-                Get This Deal
+                CLAIM THIS DEAL
               </Button>
               
-              <p className="text-gray-400 text-sm">
-                🕒 Offer expires in 24 hours • Limited quantities available
-              </p>
+              <div className="flex items-center justify-between text-sm">
+                <span className="text-gray-400">
+                  🕒 <span className="text-red-400 font-semibold">24 hours remaining</span>
+                </span>
+                <span className="text-gray-400">
+                  🔥 <span className="text-orange-400 font-semibold">74% claimed</span>
+                </span>
+              </div>
             </div>
           </div>
         </div>
+        
+        {/* Background decorative elements */}
+        <div className="absolute top-1/4 left-10 w-32 h-32 bg-red-600/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/3 right-10 w-48 h-48 bg-red-600/5 rounded-full blur-3xl"></div>
       </section>
 
-      {/* Limited-Time Deal Banner */}
-      <section className="py-12 bg-gradient-to-r from-yellow-600/20 via-orange-600/20 to-red-600/20 border-y border-yellow-500/30">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-8 items-center">
-            {/* Left Side - Banner Image */}
-            <div className="relative">
-              <div className="aspect-[4/3] bg-gradient-to-br from-orange-600/30 to-red-600/50 rounded-xl overflow-hidden shadow-xl">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-500/30 to-red-600/40 flex items-center justify-center">
-                  <div className="text-center">
-                    <AlertTriangle className="w-20 h-20 text-yellow-400 mx-auto mb-4 animate-pulse" />
-                    <p className="text-white text-xl font-bold">2-YEAR DEAL</p>
-                    <p className="text-yellow-400 text-lg">Maximum Savings</p>
-                  </div>
-                </div>
-                {/* Warning stripes effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent transform -skew-x-12 animate-pulse"></div>
+      {/* Enhanced Limited-Time Deal Section */}
+      <section className="py-16 relative overflow-hidden">
+        {/* Animated background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-yellow-600/10 via-orange-600/20 to-red-600/10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,193,7,0.1),transparent_70%)]"></div>
+        
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 relative z-10">
+          {/* Main Deal Card */}
+          <div className="bg-gradient-to-br from-gray-900/80 via-gray-800/90 to-gray-900/80 backdrop-blur-xl border-2 border-yellow-500/50 rounded-3xl shadow-2xl shadow-yellow-600/20 overflow-hidden">
+            
+            {/* Urgent Header Banner */}
+            <div className="bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 p-4 relative overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent animate-pulse"></div>
+              <div className="flex items-center justify-center space-x-3 relative z-10">
+                <AlertTriangle className="w-6 h-6 text-white animate-bounce" />
+                <span className="text-white font-black text-xl md:text-2xl tracking-wider">
+                  🚨 LIMITED-TIME EXCLUSIVE DEAL 🚨
+                </span>
+                <AlertTriangle className="w-6 h-6 text-white animate-bounce" />
               </div>
             </div>
 
-            {/* Right Side - Deal Text */}
-            <div className="space-y-4">
-              <div className="flex items-center space-x-2">
-                <AlertTriangle className="w-6 h-6 text-yellow-400 animate-pulse" />
-                <h2 className="text-3xl md:text-4xl font-bold text-white">
-                  LIMITED-TIME DEAL
+            <div className="p-8 md:p-12">
+              <div className="text-center mb-8">
+                {/* Deal highlight */}
+                <div className="inline-flex items-center space-x-2 bg-yellow-500/20 border border-yellow-400/50 text-yellow-300 px-6 py-3 rounded-full mb-6">
+                  <Timer className="w-5 h-5 animate-pulse" />
+                  <span className="font-bold text-lg">MAXIMUM SAVINGS EVENT</span>
+                </div>
+                
+                <h2 className="text-4xl md:text-6xl font-black text-white mb-4">
+                  <span className="text-yellow-400">2-YEAR</span> MEGA DEAL
                 </h2>
-                <AlertTriangle className="w-6 h-6 text-yellow-400 animate-pulse" />
-              </div>
-              
-              <h3 className="text-2xl md:text-3xl font-semibold text-yellow-400">
-                2-Year Plan, Only $179.99
-              </h3>
-              
-              <p className="text-lg text-gray-300">
-                Starting from <span className="text-white font-semibold">$179.99</span> for 1 Connection.
-              </p>
-              
-              <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-4">
-                <p className="text-yellow-300 font-medium">
-                  Act fast—our generosity has a time limit! 🙃
-                </p>
-                <p className="text-gray-400 text-sm mt-1">
-                  Save over 60% compared to monthly billing
+                
+                <div className="flex items-center justify-center space-x-6 mb-6">
+                  <div className="text-center">
+                    <div className="text-5xl md:text-7xl font-black text-yellow-400">$179<span className="text-3xl">.99</span></div>
+                    <div className="text-gray-400 text-lg line-through">$599.99</div>
+                  </div>
+                  <div className="text-center">
+                    <div className="bg-red-600 text-white px-4 py-2 rounded-full text-xl font-bold transform -rotate-12">
+                      70% OFF
+                    </div>
+                  </div>
+                </div>
+                
+                <p className="text-xl text-gray-300 mb-8">
+                  Starting from <span className="text-white font-bold text-2xl">$179.99</span> for 1 Connection
                 </p>
               </div>
-              
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white px-8 py-3 text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-              >
-                Get 2-Year Deal Now
-              </Button>
+
+              {/* Deal Features */}
+              <div className="grid md:grid-cols-3 gap-6 mb-10">
+                <div className="bg-yellow-500/10 border border-yellow-400/30 rounded-2xl p-6 text-center">
+                  <div className="text-3xl mb-2">💎</div>
+                  <h3 className="text-white font-bold text-lg mb-2">Premium Features</h3>
+                  <p className="text-gray-400 text-sm">20,000+ channels, 4K quality, unlimited devices</p>
+                </div>
+                
+                <div className="bg-green-500/10 border border-green-400/30 rounded-2xl p-6 text-center">
+                  <div className="text-3xl mb-2">💰</div>
+                  <h3 className="text-white font-bold text-lg mb-2">Huge Savings</h3>
+                  <p className="text-gray-400 text-sm">Save $420 compared to monthly subscriptions</p>
+                </div>
+                
+                <div className="bg-red-500/10 border border-red-400/30 rounded-2xl p-6 text-center">
+                  <div className="text-3xl mb-2">⚡</div>
+                  <h3 className="text-white font-bold text-lg mb-2">Instant Access</h3>
+                  <p className="text-gray-400 text-sm">Setup within minutes, no waiting periods</p>
+                </div>
+              </div>
+
+              {/* Urgency Message */}
+              <div className="bg-gradient-to-r from-red-600/20 via-orange-600/20 to-yellow-600/20 border-2 border-red-500/30 rounded-2xl p-6 mb-8">
+                <div className="flex items-center justify-center space-x-3 text-center">
+                  <AlertTriangle className="w-8 h-8 text-red-400 animate-pulse flex-shrink-0" />
+                  <div>
+                    <p className="text-red-300 font-bold text-lg mb-1">
+                      Act fast—our generosity has a time limit! 🙃
+                    </p>
+                    <p className="text-orange-300 text-sm">
+                      This exclusive pricing expires when the timer hits zero • Only 127 spots remaining
+                    </p>
+                  </div>
+                  <AlertTriangle className="w-8 h-8 text-red-400 animate-pulse flex-shrink-0" />
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <div className="text-center">
+                <Button 
+                  size="lg" 
+                  className="bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500 hover:from-red-700 hover:via-orange-600 hover:to-yellow-600 text-white px-16 py-6 text-2xl font-black rounded-2xl shadow-2xl hover:shadow-orange-500/30 transition-all duration-300 transform hover:scale-105 hover:-translate-y-2 border-2 border-yellow-400/50"
+                >
+                  🔥 SECURE 2-YEAR DEAL NOW 🔥
+                </Button>
+                
+                <p className="text-gray-400 text-sm mt-4">
+                  ⏰ <span className="text-red-400 font-semibold">48 hours left</span> • 
+                  🔥 <span className="text-orange-400 font-semibold">127 remaining</span> • 
+                  💳 <span className="text-green-400 font-semibold">Instant activation</span>
+                </p>
+              </div>
             </div>
+            
+            {/* Bottom accent line */}
+            <div className="h-2 bg-gradient-to-r from-red-600 via-orange-500 to-yellow-500"></div>
           </div>
         </div>
+        
+        {/* Background floating elements */}
+        <div className="absolute top-20 left-20 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-orange-500/10 rounded-full blur-2xl animate-pulse"></div>
       </section>
 
       {/* Pricing Table Section */}
@@ -709,6 +802,181 @@ const Pricing = () => {
                   Contact our support team
                 </Button>
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Trust Signals & Key Features Content Section */}
+      <section className="py-24 bg-gradient-to-b from-gray-900/30 to-black">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          
+          {/* Trust Signals Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+              Why Choose <span className="text-red-600">IPTV UK?</span>
+            </h2>
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+              Join over 50,000 satisfied customers who trust us for their entertainment needs
+            </p>
+          </div>
+
+          {/* Trust Stats */}
+          <div className="grid md:grid-cols-4 gap-8 mb-16">
+            <div className="text-center">
+              <div className="bg-gradient-to-br from-green-600/20 to-green-800/20 border border-green-500/30 rounded-2xl p-6 mb-4">
+                <div className="text-4xl font-black text-green-400 mb-2">50K+</div>
+                <p className="text-white font-semibold">Happy Customers</p>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-gradient-to-br from-blue-600/20 to-blue-800/20 border border-blue-500/30 rounded-2xl p-6 mb-4">
+                <div className="text-4xl font-black text-blue-400 mb-2">99.9%</div>
+                <p className="text-white font-semibold">Uptime Guarantee</p>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-gradient-to-br from-purple-600/20 to-purple-800/20 border border-purple-500/30 rounded-2xl p-6 mb-4">
+                <div className="text-4xl font-black text-purple-400 mb-2">20K+</div>
+                <p className="text-white font-semibold">Premium Channels</p>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <div className="bg-gradient-to-br from-red-600/20 to-red-800/20 border border-red-500/30 rounded-2xl p-6 mb-4">
+                <div className="text-4xl font-black text-red-400 mb-2">24/7</div>
+                <p className="text-white font-semibold">Expert Support</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Key Trust Features Grid */}
+          <div className="grid md:grid-cols-3 gap-8 mb-16">
+            {/* Security & Reliability */}
+            <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105">
+              <CardContent className="p-8 text-center">
+                <div className="bg-green-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Shield className="w-8 h-8 text-green-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Secure & Reliable</h3>
+                <ul className="text-gray-300 space-y-2 text-left">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>SSL encrypted connections</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>99.9% server uptime</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>Anti-freeze technology</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>Automatic failover servers</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Premium Quality */}
+            <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105">
+              <CardContent className="p-8 text-center">
+                <div className="bg-blue-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Monitor className="w-8 h-8 text-blue-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Premium Quality</h3>
+                <ul className="text-gray-300 space-y-2 text-left">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>4K Ultra HD streaming</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>Crystal clear audio</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>No buffering or lag</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>Multiple bitrate options</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            {/* Customer Support */}
+            <Card className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300 hover:scale-105">
+              <CardContent className="p-8 text-center">
+                <div className="bg-red-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                  <Headphones className="w-8 h-8 text-red-400" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-4">Award-Winning Support</h3>
+                <ul className="text-gray-300 space-y-2 text-left">
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>24/7 live chat support</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>Expert technical team</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>Setup assistance included</span>
+                  </li>
+                  <li className="flex items-center">
+                    <Check className="w-4 h-4 text-green-400 mr-2" />
+                    <span>Multi-language support</span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+
+          {/* Special Guarantees */}
+          <div className="bg-gradient-to-r from-gray-800/50 via-gray-900/50 to-gray-800/50 border border-gray-700 rounded-3xl p-8">
+            <h3 className="text-2xl font-bold text-white text-center mb-8">
+              Our <span className="text-red-600">Exclusive</span> Guarantees
+            </h3>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <div className="text-center">
+                <div className="bg-green-600/20 p-4 rounded-xl mb-4">
+                  <Shield className="w-8 h-8 text-green-400 mx-auto" />
+                </div>
+                <h4 className="text-white font-semibold mb-2">Money-Back Guarantee</h4>
+                <p className="text-gray-400 text-sm">7-day full refund policy</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-blue-600/20 p-4 rounded-xl mb-4">
+                  <Zap className="w-8 h-8 text-blue-400 mx-auto" />
+                </div>
+                <h4 className="text-white font-semibold mb-2">Instant Activation</h4>
+                <p className="text-gray-400 text-sm">Setup within 5 minutes</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-purple-600/20 p-4 rounded-xl mb-4">
+                  <Globe className="w-8 h-8 text-purple-400 mx-auto" />
+                </div>
+                <h4 className="text-white font-semibold mb-2">Global Access</h4>
+                <p className="text-gray-400 text-sm">Works worldwide</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-red-600/20 p-4 rounded-xl mb-4">
+                  <Users className="w-8 h-8 text-red-400 mx-auto" />
+                </div>
+                <h4 className="text-white font-semibold mb-2">Multi-Device</h4>
+                <p className="text-gray-400 text-sm">Up to 5 connections</p>
+              </div>
             </div>
           </div>
         </div>
