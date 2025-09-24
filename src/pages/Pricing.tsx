@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Check, Star, Monitor, MessageCircle, Shield, Zap, Globe, Users, Clock, Headphones } from "lucide-react";
+import { Check, Star, Monitor, MessageCircle, Shield, Zap, Globe, Users, Clock, Headphones, Timer, Gift, AlertTriangle, Calendar, Tv } from "lucide-react";
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -85,17 +85,19 @@ const Pricing = () => {
     { devices: 5, label: "5 Devices", price: 0 }
   ];
 
-  const detailedFeatures = [
-    { name: "Premium Channels", basic: "15,000+", premium: "20,000+", pro: "25,000+", ultimate: "30,000+" },
-    { name: "VOD Library", basic: "10,000+", premium: "15,000+", pro: "20,000+", ultimate: "25,000+" },
-    { name: "HD Quality", basic: true, premium: true, pro: true, ultimate: true },
-    { name: "4K Quality", basic: false, premium: true, pro: true, ultimate: true },
-    { name: "Sports & PPV", basic: "Basic", premium: "Premium", pro: "Premium+", ultimate: "All Access" },
-    { name: "Simultaneous Connections", basic: "1-2", premium: "1-3", pro: "1-4", ultimate: "1-5" },
-    { name: "24/7 Support", basic: true, premium: true, pro: true, ultimate: true },
-    { name: "Catch-up TV", basic: "7 days", premium: "14 days", pro: "30 days", ultimate: "Unlimited" },
-    { name: "Adult Channels", basic: false, premium: false, pro: "Basic", ultimate: "Premium" },
-    { name: "Multi-room Setup", basic: false, premium: false, pro: true, ultimate: true }
+  const allIncludedFeatures = [
+    { name: "Premium Channels", value: "20,000+", icon: Tv },
+    { name: "VOD Library", value: "15,000+ Movies & Shows", icon: Monitor },
+    { name: "HD & 4K Quality", value: "Ultra High Definition", icon: Zap },
+    { name: "Sports & PPV Events", value: "All Premium Sports", icon: Users },
+    { name: "Simultaneous Connections", value: "Up to 5 Devices", icon: Monitor },
+    { name: "24/7 Customer Support", value: "Always Available", icon: Headphones },
+    { name: "Catch-up TV", value: "30 Days Playback", icon: Clock },
+    { name: "Multi-Device Support", value: "All Platforms", icon: Globe },
+    { name: "Premium Adult Channels", value: "18+ Content Available", icon: Shield },
+    { name: "Multi-room Setup", value: "Whole House Coverage", icon: Users },
+    { name: "EPG & TV Guide", value: "7-Day Electronic Guide", icon: Calendar },
+    { name: "Anti-Freeze Technology", value: "Buffer-Free Streaming", icon: Zap }
   ];
 
   const testimonials = [
@@ -182,6 +184,128 @@ const Pricing = () => {
           >
             START WATCHING NOW!
           </Button>
+        </div>
+      </section>
+
+      {/* Deal of the Day Section */}
+      <section className="py-16 bg-gradient-to-r from-red-600/10 via-transparent to-red-600/10">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left Side - Image */}
+            <div className="relative">
+              <div className="aspect-video bg-gradient-to-br from-red-600/20 to-black rounded-2xl overflow-hidden shadow-2xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-red-600/30 via-transparent to-black/80 flex items-center justify-center">
+                  <div className="text-center">
+                    <Timer className="w-16 h-16 text-red-400 mx-auto mb-4 animate-pulse" />
+                    <p className="text-white text-lg font-semibold">Special Offer</p>
+                    <p className="text-red-400 text-sm">Limited Time Only</p>
+                  </div>
+                </div>
+                {/* Decorative elements */}
+                <div className="absolute top-4 right-4 w-12 h-12 bg-red-600/20 rounded-full animate-pulse"></div>
+                <div className="absolute bottom-6 left-6 w-8 h-8 bg-yellow-400/30 rounded-full animate-bounce"></div>
+              </div>
+            </div>
+
+            {/* Right Side - Deal Content */}
+            <div className="space-y-6">
+              <div className="inline-flex items-center space-x-2 bg-red-600/20 text-red-400 px-4 py-2 rounded-full">
+                <Clock className="w-4 h-4" />
+                <span className="font-semibold">Deal of the Day</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold text-white">
+                <span className="text-red-600">30% OFF</span>
+              </h2>
+              
+              <h3 className="text-2xl md:text-3xl font-semibold text-white">
+                3 Months Subscription
+              </h3>
+              
+              <div className="flex items-baseline space-x-4">
+                <span className="text-4xl font-bold text-red-600">£24.99</span>
+                <span className="text-2xl text-gray-400 line-through">£49.99</span>
+              </div>
+              
+              <div className="bg-gradient-to-r from-green-600/20 to-green-400/20 border border-green-500/30 rounded-lg p-4">
+                <div className="flex items-center space-x-2 text-green-400">
+                  <Gift className="w-5 h-5" />
+                  <span className="font-semibold">Extra Offer: Get 1 Month Free!</span>
+                </div>
+                <p className="text-gray-300 text-sm mt-1">
+                  Total: 4 months of premium IPTV for the price of 3
+                </p>
+              </div>
+              
+              <Button 
+                size="lg" 
+                className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105"
+              >
+                Get This Deal
+              </Button>
+              
+              <p className="text-gray-400 text-sm">
+                🕒 Offer expires in 24 hours • Limited quantities available
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Limited-Time Deal Banner */}
+      <section className="py-12 bg-gradient-to-r from-yellow-600/20 via-orange-600/20 to-red-600/20 border-y border-yellow-500/30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8 items-center">
+            {/* Left Side - Banner Image */}
+            <div className="relative">
+              <div className="aspect-[4/3] bg-gradient-to-br from-orange-600/30 to-red-600/50 rounded-xl overflow-hidden shadow-xl">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-orange-500/30 to-red-600/40 flex items-center justify-center">
+                  <div className="text-center">
+                    <AlertTriangle className="w-20 h-20 text-yellow-400 mx-auto mb-4 animate-pulse" />
+                    <p className="text-white text-xl font-bold">2-YEAR DEAL</p>
+                    <p className="text-yellow-400 text-lg">Maximum Savings</p>
+                  </div>
+                </div>
+                {/* Warning stripes effect */}
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-yellow-400/10 to-transparent transform -skew-x-12 animate-pulse"></div>
+              </div>
+            </div>
+
+            {/* Right Side - Deal Text */}
+            <div className="space-y-4">
+              <div className="flex items-center space-x-2">
+                <AlertTriangle className="w-6 h-6 text-yellow-400 animate-pulse" />
+                <h2 className="text-3xl md:text-4xl font-bold text-white">
+                  LIMITED-TIME DEAL
+                </h2>
+                <AlertTriangle className="w-6 h-6 text-yellow-400 animate-pulse" />
+              </div>
+              
+              <h3 className="text-2xl md:text-3xl font-semibold text-yellow-400">
+                2-Year Plan, Only $179.99
+              </h3>
+              
+              <p className="text-lg text-gray-300">
+                Starting from <span className="text-white font-semibold">$179.99</span> for 1 Connection.
+              </p>
+              
+              <div className="bg-yellow-400/10 border border-yellow-400/30 rounded-lg p-4">
+                <p className="text-yellow-300 font-medium">
+                  Act fast—our generosity has a time limit! 🙃
+                </p>
+                <p className="text-gray-400 text-sm mt-1">
+                  Save over 60% compared to monthly billing
+                </p>
+              </div>
+              
+              <Button 
+                size="lg" 
+                className="bg-gradient-to-r from-yellow-600 to-orange-600 hover:from-yellow-700 hover:to-orange-700 text-white px-8 py-3 text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
+              >
+                Get 2-Year Deal Now
+              </Button>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -352,65 +476,99 @@ const Pricing = () => {
         </div>
       </section>
 
-      {/* Detailed Features Section */}
+      {/* Complete Feature Comparison Section */}
       <section className="py-24 bg-gradient-to-b from-black to-gray-900/50">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Complete Feature <span className="text-red-600">Comparison</span>
+              Every Plan Includes <span className="text-red-600">Everything</span>
             </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              See exactly what's included in each plan to make the perfect choice for your needs
+            <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+              All our plans include the exact same premium features. The only difference is the price and subscription length.
             </p>
+            <div className="inline-flex items-center space-x-2 bg-green-600/20 text-green-400 px-4 py-2 rounded-full">
+              <Check className="w-4 h-4" />
+              <span className="font-semibold">Same Features • Different Prices • More Savings</span>
+            </div>
           </div>
 
-          <div className="overflow-x-auto">
-            <table className="w-full bg-gray-800/50 border border-gray-700 rounded-lg">
-              <thead>
-                <tr className="bg-gray-900/50">
-                  <th className="text-left p-4 text-white font-semibold">Features</th>
-                  <th className="text-center p-4 text-white font-semibold">1-Month</th>
-                  <th className="text-center p-4 text-white font-semibold">3-Month</th>
-                  <th className="text-center p-4 text-white font-semibold">6-Month</th>
-                  <th className="text-center p-4 text-white font-semibold">12-Month</th>
-                </tr>
-              </thead>
-              <tbody>
-                {detailedFeatures.map((feature, index) => (
-                  <tr key={index} className="border-t border-gray-700">
-                    <td className="p-4 text-gray-300 font-medium">{feature.name}</td>
-                    <td className="text-center p-4">
-                      {typeof feature.basic === 'boolean' ? (
-                        feature.basic ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <span className="text-gray-500">-</span>
-                      ) : (
-                        <span className="text-gray-300">{feature.basic}</span>
-                      )}
-                    </td>
-                    <td className="text-center p-4">
-                      {typeof feature.premium === 'boolean' ? (
-                        feature.premium ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <span className="text-gray-500">-</span>
-                      ) : (
-                        <span className="text-gray-300">{feature.premium}</span>
-                      )}
-                    </td>
-                    <td className="text-center p-4">
-                      {typeof feature.pro === 'boolean' ? (
-                        feature.pro ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <span className="text-gray-500">-</span>
-                      ) : (
-                        <span className="text-gray-300">{feature.pro}</span>
-                      )}
-                    </td>
-                    <td className="text-center p-4">
-                      {typeof feature.ultimate === 'boolean' ? (
-                        feature.ultimate ? <Check className="w-5 h-5 text-green-500 mx-auto" /> : <span className="text-gray-500">-</span>
-                      ) : (
-                        <span className="text-gray-300">{feature.ultimate}</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+          {/* Feature Grid */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+            {allIncludedFeatures.map((feature, index) => (
+              <Card key={index} className="bg-gray-800/50 border-gray-700 hover:bg-gray-800/70 transition-all duration-300">
+                <CardContent className="p-6">
+                  <div className="flex items-start space-x-4">
+                    <div className="bg-red-600/20 p-3 rounded-lg">
+                      <feature.icon className="w-6 h-6 text-red-400" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-white font-semibold mb-2">{feature.name}</h3>
+                      <p className="text-gray-300 text-sm">{feature.value}</p>
+                      <div className="flex items-center mt-2">
+                        <Check className="w-4 h-4 text-green-500 mr-2" />
+                        <span className="text-green-400 text-xs font-medium">Included in ALL plans</span>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Price Comparison Table */}
+          <div className="bg-gray-800/30 border border-gray-700 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white text-center mb-8">
+              Choose Your <span className="text-red-600">Savings Level</span>
+            </h3>
+            <div className="grid md:grid-cols-4 gap-6">
+              {plans.map((plan, index) => (
+                <div key={plan.id} className={`text-center p-6 rounded-xl border-2 transition-all duration-300 hover:scale-105 ${
+                  plan.popular 
+                    ? 'border-red-600 bg-red-600/10 shadow-lg shadow-red-600/20' 
+                    : 'border-gray-600 bg-gray-900/50 hover:border-red-600/50'
+                }`}>
+                  {plan.popular && (
+                    <Badge className="bg-red-600 text-white mb-4">
+                      <Star className="w-3 h-3 mr-1" />
+                      Best Value
+                    </Badge>
+                  )}
+                  <h4 className="text-lg font-bold text-white mb-2">{plan.name}</h4>
+                  <div className="mb-4">
+                    <span className="text-3xl font-bold text-red-600">{plan.price}</span>
+                    <span className="text-gray-400 ml-1">{plan.period}</span>
+                  </div>
+                  <div className="text-sm text-gray-400 line-through mb-4">
+                    Was {plan.originalPrice}
+                  </div>
+                  <Button 
+                    className={`w-full ${
+                      plan.popular 
+                        ? 'bg-red-600 hover:bg-red-700 text-white' 
+                        : 'bg-gray-700 hover:bg-gray-600 text-gray-300'
+                    }`}
+                    size="sm"
+                  >
+                    Choose Plan
+                  </Button>
+                  <p className="text-xs text-gray-500 mt-2">
+                    {index === 0 && 'Perfect for trying'}
+                    {index === 1 && 'Save 23%'}
+                    {index === 2 && 'Save 29%'}
+                    {index === 3 && 'Save 36%'}
+                  </p>
+                </div>
+              ))}
+            </div>
+            
+            <div className="text-center mt-8">
+              <p className="text-gray-400 text-lg mb-2">
+                🎯 <span className="text-white font-semibold">Same premium features</span> • Different subscription lengths
+              </p>
+              <p className="text-gray-500 text-sm">
+                All plans include 20,000+ channels, 4K quality, 24/7 support, and multi-device access
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -456,6 +614,101 @@ const Pricing = () => {
                 <p className="text-white font-semibold">Trusted by 50,000+ customers</p>
                 <p className="text-gray-400 text-sm">4.9/5 average rating • 30-day money-back guarantee</p>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* 7-Day Money-Back Guarantee Section */}
+      <section className="py-24 bg-gradient-to-b from-gray-900/50 to-green-900/20">
+        <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+          <div className="bg-gradient-to-br from-green-600/10 via-gray-800/50 to-green-600/10 border border-green-500/30 rounded-3xl p-12">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-green-600/20 rounded-full mb-6">
+                <Shield className="w-10 h-10 text-green-400" />
+              </div>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+                <span className="text-green-400">7-Day</span> Money-Back Guarantee
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                We're so confident you'll love our service, we offer a full refund within 7 days—no questions asked.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-12">
+              <div className="text-center">
+                <div className="bg-green-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-green-400">1</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Try Our Service</h3>
+                <p className="text-gray-400">Subscribe and test all features for up to 7 days</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-green-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-green-400">2</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Not Satisfied?</h3>
+                <p className="text-gray-400">Contact us within 7 days if you're not happy</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-green-600/20 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <span className="text-2xl font-bold text-green-400">3</span>
+                </div>
+                <h3 className="text-lg font-semibold text-white mb-2">Full Refund</h3>
+                <p className="text-gray-400">Get 100% of your money back, no questions asked</p>
+              </div>
+            </div>
+
+            <div className="bg-gray-900/50 border border-green-500/20 rounded-2xl p-8">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">
+                    Why We Offer This Guarantee
+                  </h3>
+                  <ul className="space-y-3">
+                    <li className="flex items-start">
+                      <Check className="w-5 h-5 text-green-400 mt-0.5 mr-3 flex-shrink-0" />
+                      <span className="text-gray-300">We believe in the quality of our service</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="w-5 h-5 text-green-400 mt-0.5 mr-3 flex-shrink-0" />
+                      <span className="text-gray-300">Over 99% of customers are satisfied</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="w-5 h-5 text-green-400 mt-0.5 mr-3 flex-shrink-0" />
+                      <span className="text-gray-300">Risk-free trial for your peace of mind</span>
+                    </li>
+                    <li className="flex items-start">
+                      <Check className="w-5 h-5 text-green-400 mt-0.5 mr-3 flex-shrink-0" />
+                      <span className="text-gray-300">Fast refund processing (2-3 business days)</span>
+                    </li>
+                  </ul>
+                </div>
+                
+                <div className="text-center">
+                  <div className="bg-gradient-to-br from-green-600 to-green-700 rounded-2xl p-8 shadow-2xl">
+                    <Shield className="w-16 h-16 text-white mx-auto mb-4" />
+                    <h4 className="text-xl font-bold text-white mb-2">100% Secure</h4>
+                    <p className="text-green-100 mb-4">Your satisfaction is guaranteed</p>
+                    <div className="text-sm text-green-200">
+                      ⭐ Trusted by 50,000+ customers<br/>
+                      🔒 Secure payment processing<br/>
+                      🏆 Award-winning support team
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="text-center mt-8">
+              <p className="text-gray-400 text-lg">
+                Questions about our guarantee? 
+                <Button variant="link" className="text-green-400 hover:text-green-300 p-1 h-auto">
+                  Contact our support team
+                </Button>
+              </p>
             </div>
           </div>
         </div>
