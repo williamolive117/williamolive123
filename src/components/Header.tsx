@@ -11,7 +11,7 @@ const Header = () => {
     { name: "Home", href: "/", type: "route" },
     { name: "Plans", href: "/pricing", type: "route" },
     { name: "Features", href: "#features", type: "anchor" },
-    { name: "Devices", href: "#devices", type: "anchor" },
+    { name: "Devices", href: "/setup-guides", type: "route" },
     { name: "Support", href: "#support", type: "anchor" },
     { name: "FAQ", href: "#faq", type: "anchor" },
   ];
