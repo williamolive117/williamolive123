@@ -227,6 +227,40 @@ const AndroidSetup = () => {
           </p>
         </div>
 
+        {/* Demo Content Section */}
+        <div className="mb-16">
+          <div className="bg-gradient-to-r from-gray-800/30 to-gray-900/50 rounded-2xl p-8 border border-gray-700/50">
+            <div className="max-w-4xl mx-auto">
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                Setting up IPTV on your Android device has never been easier. Whether you're using a smartphone, tablet, or Android TV box, our comprehensive guide will walk you through each step of the installation process. Android devices offer excellent flexibility and compatibility with various IPTV applications, making them one of the most popular choices for streaming entertainment.
+              </p>
+              
+              <p className="text-gray-300 text-lg leading-relaxed mb-6">
+                The process typically involves downloading a compatible IPTV player from the Google Play Store, configuring your subscription credentials, and optimizing the settings for your internet connection. Popular IPTV applications like IPTV Smarters Pro, TiviMate, and Perfect Player provide intuitive interfaces that make channel browsing and content discovery seamless.
+              </p>
+              
+              <p className="text-gray-300 text-lg leading-relaxed">
+                Before you begin, ensure your Android device is running version 5.0 or higher for optimal compatibility. You'll also need a stable internet connection with at least 10 Mbps for HD streaming and 25+ Mbps for 4K content. Our guide covers everything from basic setup to advanced features like recording, parental controls, and multi-screen viewing to enhance your IPTV experience.
+              </p>
+              
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-6 pt-6 border-t border-gray-700/50">
+                <div className="flex items-center space-x-2 text-green-400">
+                  <CheckCircle className="w-5 h-5" />
+                  <span className="text-sm font-medium">Compatible with Android 5.0+</span>
+                </div>
+                <div className="flex items-center space-x-2 text-green-400">
+                  <CheckCircle className="w-5 h-5" />
+                  <span className="text-sm font-medium">Works on phones, tablets & TV boxes</span>
+                </div>
+                <div className="flex items-center space-x-2 text-green-400">
+                  <CheckCircle className="w-5 h-5" />
+                  <span className="text-sm font-medium">No rooting required</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
         <div className="space-y-16">
           {tutorialSteps.map((step, index) => (
             <div key={step.stepNumber} className={`flex flex-col ${index % 2 === 0 ? 'lg:flex-row' : 'lg:flex-row-reverse'} items-center gap-12`}>
