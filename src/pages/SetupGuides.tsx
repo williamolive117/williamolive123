@@ -236,11 +236,12 @@ const SetupGuides = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {installationGuides.map((guide, index) => {
               const IconComponent = guide.icon;
-              const CardWrapper = (guide.id === 'android' || guide.id === 'firestick' || guide.id === 'smart-tv' || guide.id === 'ios') ? Link : 'div';
+              const CardWrapper = (guide.id === 'android' || guide.id === 'firestick' || guide.id === 'smart-tv' || guide.id === 'ios' || guide.id === 'windows') ? Link : 'div';
               const cardProps = guide.id === 'android' ? { to: '/android-setup' } : 
                                 guide.id === 'firestick' ? { to: '/firestick-setup' } :
                                 guide.id === 'smart-tv' ? { to: '/smart-tv-setup' } :
-                                guide.id === 'ios' ? { to: '/ios-setup' } : {};
+                                guide.id === 'ios' ? { to: '/ios-setup' } :
+                                guide.id === 'windows' ? { to: '/windows-setup' } : {};
               
               return (
                 <CardWrapper key={guide.id} {...cardProps}>
