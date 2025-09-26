@@ -2,26 +2,18 @@ import { Link } from 'react-router-dom';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
-import { ChevronDown, CheckCircle, Download, Settings, Smartphone, Tablet, Monitor, Tv, Play, Wifi, AlertTriangle, RefreshCw, Search, ExternalLink, Zap, Shield } from 'lucide-react';
+import { ChevronDown, CheckCircle, Download, Settings, Monitor, Tv, Search, ExternalLink, Wifi, AlertTriangle, RefreshCw, Shield, PlayCircle } from 'lucide-react';
 import { useState } from 'react';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 
 const SmartTVSetup = () => {
   const [openFAQs, setOpenFAQs] = useState<{ [key: string]: boolean }>({});
-  const [openPlatforms, setOpenPlatforms] = useState<{ [key: string]: boolean }>({});
 
   const toggleFAQ = (faqId: string) => {
     setOpenFAQs(prev => ({
       ...prev,
       [faqId]: !prev[faqId]
-    }));
-  };
-
-  const togglePlatform = (platformId: string) => {
-    setOpenPlatforms(prev => ({
-      ...prev,
-      [platformId]: !prev[platformId]
     }));
   };
 
@@ -98,23 +90,10 @@ const SmartTVSetup = () => {
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
             Step-by-Step IPTV Setup Guide for LG WebOS, Samsung Tizen, and Other Smart TVs
           </h1>
-          <h2 className="text-xl md:text-2xl text-gray-400 mb-8 max-w-4xl mx-auto">
+          <h2 className="text-xl md:text-2xl text-gray-400 mb-12 max-w-4xl mx-auto">
             Follow these easy instructions to install IPTV on your Smart TV and enjoy seamless streaming.
           </h2>
           
-          {/* Visual Media Placeholder */}
-          <div className="mb-8 max-w-4xl mx-auto">
-            <div className="bg-gradient-to-r from-gray-800/30 to-gray-900/50 rounded-3xl p-8 border border-gray-700/50">
-              <div className="w-full h-64 bg-gray-700 rounded-lg flex items-center justify-center mb-4">
-                <div className="text-center">
-                  <Play className="w-16 h-16 text-red-500 mx-auto mb-4" />
-                  <span className="text-gray-400 text-lg">IPTV Streaming on Smart TV</span>
-                </div>
-              </div>
-              <p className="text-gray-400 text-sm">Visual demonstration of IPTV setup and streaming on Smart TVs</p>
-            </div>
-          </div>
-
           <Button 
             onClick={() => scrollToSection('installation-guide')}
             size="lg" 
@@ -133,24 +112,28 @@ const SmartTVSetup = () => {
           </h2>
           <div className="max-w-4xl mx-auto">
             <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              IPTV (Internet Protocol Television) transforms your Smart TV into a powerful entertainment hub, providing access to thousands of live TV channels, movies, and sports directly through your internet connection. Unlike traditional cable or satellite services, IPTV offers flexibility, convenience, and access to global content from the comfort of your living room.
+              IPTV (Internet Protocol Television) allows you to stream live television channels, movies, and on-demand content directly through your internet connection. Instead of traditional cable or satellite services, IPTV provides access to thousands of international channels, sports events, and entertainment content right on your Smart TV.
+            </p>
+            
+            <p className="text-gray-300 text-lg leading-relaxed mb-8">
+              Smart TVs like LG WebOS, Samsung Tizen, Android TV, and Roku offer built-in app stores where you can download IPTV applications. This eliminates the need for additional hardware and allows you to use your TV's remote control for navigation. With IPTV on your Smart TV, you can enjoy high-definition streaming, access global content, and have complete control over what you watch and when you watch it.
             </p>
             
             <div className="grid md:grid-cols-3 gap-8">
               <div className="bg-gradient-to-br from-gray-800/30 to-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+                <PlayCircle className="w-12 h-12 text-red-500 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">Live TV & Sports</h3>
+                <p className="text-gray-400">Access thousands of live channels and sports events from around the world.</p>
+              </div>
+              <div className="bg-gradient-to-br from-gray-800/30 to-gray-900/50 rounded-xl p-6 border border-gray-700/50">
+                <Monitor className="w-12 h-12 text-red-500 mx-auto mb-4" />
+                <h3 className="text-xl font-bold text-white mb-2">On-Demand Content</h3>
+                <p className="text-gray-400">Stream movies, TV shows, and series whenever you want to watch them.</p>
+              </div>
+              <div className="bg-gradient-to-br from-gray-800/30 to-gray-900/50 rounded-xl p-6 border border-gray-700/50">
                 <Tv className="w-12 h-12 text-red-500 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">Live TV Channels</h3>
-                <p className="text-gray-400">Stream thousands of live channels from around the world directly on your Smart TV.</p>
-              </div>
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-900/50 rounded-xl p-6 border border-gray-700/50">
-                <Play className="w-12 h-12 text-red-500 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">Movies & Sports</h3>
-                <p className="text-gray-400">Enjoy on-demand movies, TV shows, and live sports events in HD and 4K quality.</p>
-              </div>
-              <div className="bg-gradient-to-br from-gray-800/30 to-gray-900/50 rounded-xl p-6 border border-gray-700/50">
-                <Zap className="w-12 h-12 text-red-500 mx-auto mb-4" />
-                <h3 className="text-xl font-bold text-white mb-2">Convenience</h3>
-                <p className="text-gray-400">No additional hardware needed - use your Smart TV's built-in apps and remote control.</p>
+                <h3 className="text-xl font-bold text-white mb-2">Smart TV Integration</h3>
+                <p className="text-gray-400">Use your TV's built-in apps and remote - no additional devices required.</p>
               </div>
             </div>
           </div>
