@@ -216,31 +216,35 @@ const LifetimeSubscription = () => {
 
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <div className="inline-flex items-center space-x-3 bg-red-600/20 backdrop-blur-sm border border-red-600/30 rounded-full px-6 py-3 mb-8">
+            {/* Left Column: Text and Buttons */}
+            <div className="space-y-8">
+              <div className="inline-flex items-center space-x-3 bg-red-600/20 backdrop-blur-sm border border-red-600/30 rounded-full px-6 py-3">
                 <Infinity className="w-5 h-5 text-red-600" />
                 <span className="text-red-400 font-semibold">Lifetime Deal</span>
               </div>
 
-              <h1 className="text-4xl md:text-6xl font-bold text-white mb-8 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight">
                 Your <span className="text-red-600">Last Bill</span>: Get Lifetime IPTV Access Today
               </h1>
 
-              <h2 className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
+              <h2 className="text-xl md:text-2xl text-gray-300 leading-relaxed">
                 Never pay monthly again. Enjoy <span className="text-red-400 font-semibold">18,000+ channels</span> and 
                 <span className="text-blue-400 font-semibold"> 4K VOD</span> forever with a one-time payment.
               </h2>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-8">
-                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-12 py-4 text-xl font-bold">
+              <div className="space-y-4">
+                <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white px-12 py-4 text-xl font-bold w-full sm:w-auto">
                   GET STARTED: LIFETIME ACCESS
                 </Button>
-                <Button size="lg" variant="outline" className="border-gray-600 text-gray-300 hover:bg-gray-800 px-8 py-4 text-lg">
-                  View Plans Below
-                </Button>
+                <div>
+                  <Button size="lg" variant="outline" className="border-gray-700 bg-gray-900 text-gray-300 hover:bg-gray-800 px-8 py-3 text-lg w-full sm:w-auto">
+                    View Plans Below
+                  </Button>
+                </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-6">
+              {/* Trust Badges */}
+              <div className="grid grid-cols-3 gap-6 pt-4">
                 <div className="text-center">
                   <div className="text-2xl font-bold text-red-400 mb-1">18,000+</div>
                   <div className="text-gray-400 text-sm">Live Channels</div>
@@ -256,8 +260,9 @@ const LifetimeSubscription = () => {
               </div>
             </div>
 
-            <div className="relative">
-              <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-3xl p-8">
+            {/* Right Column: Device Graphic Card */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="bg-gradient-to-br from-gray-900/80 to-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-3xl p-8 max-w-md w-full">
                 <div className="text-center mb-6">
                   <Badge className="bg-red-600/20 text-red-400 border-red-600/30 px-4 py-2 text-lg">
                     🔥 Limited Time Offer
@@ -267,25 +272,25 @@ const LifetimeSubscription = () => {
                 <div className="grid grid-cols-2 gap-4 mb-6">
                   <div className="text-center p-4 bg-gray-800/50 rounded-2xl">
                     <Smartphone className="w-8 h-8 text-blue-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold">Mobile</div>
+                    <div className="text-white font-semibold text-sm">Mobile</div>
                   </div>
                   <div className="text-center p-4 bg-gray-800/50 rounded-2xl">
                     <Monitor className="w-8 h-8 text-green-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold">Smart TV</div>
+                    <div className="text-white font-semibold text-sm">Smart TV</div>
                   </div>
                   <div className="text-center p-4 bg-gray-800/50 rounded-2xl">
                     <Tablet className="w-8 h-8 text-purple-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold">Tablets</div>
+                    <div className="text-white font-semibold text-sm">Tablets</div>
                   </div>
                   <div className="text-center p-4 bg-gray-800/50 rounded-2xl">
                     <Gamepad2 className="w-8 h-8 text-red-400 mx-auto mb-2" />
-                    <div className="text-white font-semibold">Gaming</div>
+                    <div className="text-white font-semibold text-sm">Gaming</div>
                   </div>
                 </div>
 
                 <div className="text-center">
-                  <div className="text-3xl font-bold text-white mb-2">All Devices Supported</div>
-                  <p className="text-gray-400">One payment, unlimited streaming</p>
+                  <div className="text-2xl font-bold text-white mb-2">All Devices Supported</div>
+                  <p className="text-gray-400 text-sm">One payment, unlimited streaming</p>
                 </div>
               </div>
             </div>
