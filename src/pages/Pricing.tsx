@@ -164,121 +164,118 @@ const Pricing = () => {
     <div className="min-h-screen bg-gradient-to-b from-black via-gray-900 to-black">
       <Header />
       
-      {/* Hero Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
-        <div className="text-left max-w-4xl">
-          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-            Choose Your Perfect <span className="text-red-600">IPTV Plan</span>
-          </h1>
-          <h2 className="text-xl md:text-2xl text-gray-300 mb-6">
-            Flexible streaming solutions designed for UK viewers
-          </h2>
-          <p className="text-lg text-gray-400 mb-8 max-w-3xl">
-            Experience unlimited entertainment with our premium IPTV service. Choose from flexible monthly or yearly plans, 
-            all featuring crystal-clear HD/4K streaming, 20,000+ channels, and 24/7 customer support. No contracts, 
-            no hidden fees - just pure entertainment at your fingertips.
-          </p>
-          <Button 
-            size="lg" 
-            className="bg-red-600 hover:bg-red-700 text-white px-8 py-4 text-lg font-semibold rounded-lg shadow-lg hover:shadow-xl transition-all duration-300"
-          >
-            START WATCHING NOW!
-          </Button>
-        </div>
-      </section>
-
-      {/* Deal of the Day Header Section */}
-      <section className="py-20 bg-gradient-to-b from-black via-gray-900/50 to-black relative overflow-hidden">
+      {/* Hero Section - Two Column Layout */}
+      <section className="py-24 bg-gradient-to-b from-black via-gray-900/50 to-black relative overflow-hidden">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Left Side - Enhanced Image */}
-            <div className="relative">
-              <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
-                {/* Main gradient background */}
-                <div className="absolute inset-0 bg-gradient-to-br from-red-600 via-red-500 to-red-800"></div>
+            
+            {/* Left Column: Deal of the Day */}
+            <div className="order-1 lg:order-1">
+              <div className="bg-gradient-to-br from-red-600/90 via-red-500/95 to-red-700/90 backdrop-blur-sm border border-red-500/50 rounded-3xl p-8 shadow-2xl shadow-red-600/25 relative overflow-hidden">
                 
-                {/* Overlay patterns */}
+                {/* Background decorative elements */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-white/20"></div>
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_80%,rgba(255,255,255,0.1),transparent_50%)]"></div>
-                
-                {/* Content */}
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-center">
-                    <div className="bg-white/10 backdrop-blur-sm rounded-full p-6 mb-6 mx-auto w-fit">
-                      <Timer className="w-12 h-12 text-white animate-pulse" />
-                    </div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Today Only</h3>
-                    <p className="text-white/90 text-lg font-medium">Special Pricing</p>
-                    <div className="mt-4 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 inline-block">
-                      <span className="text-white text-sm font-bold">24 HOURS LEFT</span>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* Floating elements */}
                 <div className="absolute top-8 right-8 w-4 h-4 bg-yellow-400 rounded-full animate-ping"></div>
                 <div className="absolute bottom-12 left-8 w-6 h-6 bg-white/30 rounded-full animate-bounce"></div>
-                <div className="absolute top-1/3 right-12 w-3 h-3 bg-orange-400 rounded-full animate-pulse"></div>
+                
+                <div className="relative z-10 space-y-6">
+                  {/* Header Badge */}
+                  <div className="inline-flex items-center space-x-3 bg-white/20 backdrop-blur-sm border border-white/30 text-white px-6 py-3 rounded-full">
+                    <Timer className="w-5 h-5 animate-pulse" />
+                    <span className="font-bold text-lg tracking-wide">DEAL OF THE DAY</span>
+                  </div>
+                  
+                  {/* Discount Percentage */}
+                  <h2 className="text-6xl md:text-7xl font-black text-white leading-tight">
+                    <span className="block">30%</span>
+                    <span className="block">OFF</span>
+                  </h2>
+                  
+                  {/* Subscription Offer */}
+                  <div className="space-y-4">
+                    <h3 className="text-2xl md:text-3xl font-bold text-white">
+                      3 Months Subscription
+                    </h3>
+                    
+                    {/* Price Slash */}
+                    <div className="flex items-baseline space-x-4">
+                      <span className="text-4xl md:text-5xl font-black text-white">£24.99</span>
+                      <div className="space-y-1">
+                        <span className="text-xl text-white/70 line-through block">£49.99</span>
+                        <span className="text-green-300 text-sm font-semibold">Save £25.00</span>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  {/* Bonus Details */}
+                  <div className="bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-4">
+                    <div className="flex items-center space-x-3 text-green-300 mb-2">
+                      <Gift className="w-5 h-5" />
+                      <span className="font-bold text-base">BONUS: Get 1 Month FREE!</span>
+                    </div>
+                    <p className="text-white/90 text-sm">
+                      Total value: <span className="font-bold">4 months</span> for the price of 3
+                    </p>
+                  </div>
+                  
+                  {/* Countdown Timer */}
+                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-3 text-center">
+                    <div className="text-white text-sm font-medium mb-1">⏰ LIMITED TIME</div>
+                    <div className="text-white text-xs">24 HOURS LEFT</div>
+                  </div>
+                  
+                  {/* CTA Button */}
+                  <Button 
+                    size="lg" 
+                    className="bg-white hover:bg-gray-100 text-red-600 px-10 py-4 text-lg font-bold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:scale-105 w-full"
+                  >
+                    CLAIM THIS DEAL
+                  </Button>
+                </div>
               </div>
-              
-              {/* Glow effect */}
-              <div className="absolute inset-0 bg-red-600/20 rounded-3xl blur-2xl -z-10"></div>
             </div>
 
-            {/* Right Side - Clean Modern Text */}
-            <div className="space-y-8">
+            {/* Right Column: Hero Content */}
+            <div className="order-2 lg:order-2 space-y-8">
               <div>
-                <div className="inline-flex items-center space-x-3 bg-red-600/10 border border-red-500/30 text-red-400 px-6 py-3 rounded-full mb-6">
-                  <Clock className="w-5 h-5" />
-                  <span className="font-bold text-lg tracking-wide">DEAL OF THE DAY</span>
-                </div>
-                
-                <h1 className="text-5xl md:text-7xl font-black text-white leading-tight mb-6">
-                  <span className="block text-red-600">30%</span>
-                  <span className="block text-white">OFF</span>
+                <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                  Find the Perfect <span className="text-red-600">IPTV Plan</span> for You
                 </h1>
-              </div>
-              
-              <div className="space-y-4">
-                <h2 className="text-3xl md:text-4xl font-bold text-white">
-                  3 Months Subscription
+                
+                <h2 className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
+                  Flexible pricing, instant activation, and premium 4K streaming — choose a plan that fits your lifestyle.
                 </h2>
                 
-                <div className="flex items-baseline space-x-4">
-                  <span className="text-5xl md:text-6xl font-black text-red-600">£24.99</span>
-                  <div className="space-y-1">
-                    <span className="text-2xl text-gray-400 line-through block">£49.99</span>
-                    <span className="text-green-400 text-sm font-semibold">Save £25.00</span>
-                  </div>
-                </div>
+                <Button 
+                  size="lg" 
+                  className="bg-red-600 hover:bg-red-700 text-white px-10 py-4 text-xl font-bold rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  Explore All Plans
+                </Button>
               </div>
               
-              <div className="bg-gradient-to-r from-green-600/20 via-green-500/20 to-green-600/20 border border-green-500/40 rounded-2xl p-6">
-                <div className="flex items-center space-x-3 text-green-400 mb-2">
-                  <Gift className="w-6 h-6" />
-                  <span className="font-bold text-lg">BONUS: Get 1 Month FREE!</span>
+              {/* Additional Hero Features */}
+              <div className="grid grid-cols-2 gap-4 pt-8">
+                <div className="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700/50">
+                  <div className="text-2xl font-bold text-red-400 mb-1">20,000+</div>
+                  <div className="text-gray-400 text-sm">Channels</div>
                 </div>
-                <p className="text-green-300 text-base">
-                  Total value: <span className="font-bold">4 months</span> of premium IPTV for the price of 3
-                </p>
-              </div>
-              
-              <Button 
-                size="lg" 
-                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white px-12 py-6 text-xl font-bold rounded-2xl shadow-2xl hover:shadow-red-600/25 transition-all duration-300 transform hover:scale-105 hover:-translate-y-1"
-              >
-                CLAIM THIS DEAL
-              </Button>
-              
-              <div className="flex items-center justify-between text-sm">
-                <span className="text-gray-400">
-                  🕒 <span className="text-red-400 font-semibold">24 hours remaining</span>
-                </span>
-                <span className="text-gray-400">
-                  🔥 <span className="text-orange-400 font-semibold">74% claimed</span>
-                </span>
+                <div className="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700/50">
+                  <div className="text-2xl font-bold text-blue-400 mb-1">4K HDR</div>
+                  <div className="text-gray-400 text-sm">Quality</div>
+                </div>
+                <div className="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700/50">
+                  <div className="text-2xl font-bold text-green-400 mb-1">24/7</div>
+                  <div className="text-gray-400 text-sm">Support</div>
+                </div>
+                <div className="text-center p-4 bg-gray-800/30 rounded-xl border border-gray-700/50">
+                  <div className="text-2xl font-bold text-purple-400 mb-1">Instant</div>
+                  <div className="text-gray-400 text-sm">Setup</div>
+                </div>
               </div>
             </div>
+
           </div>
         </div>
         
