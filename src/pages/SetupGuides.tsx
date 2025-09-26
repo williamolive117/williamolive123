@@ -20,6 +20,7 @@ import {
   Users,
   Headphones
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -235,48 +236,52 @@ const SetupGuides = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {installationGuides.map((guide, index) => {
               const IconComponent = guide.icon;
+              const CardWrapper = guide.id === 'android' ? Link : 'div';
+              const cardProps = guide.id === 'android' ? { to: '/android-setup' } : {};
+              
               return (
-                <Card
-                  key={guide.id}
-                  className={`bg-gradient-to-br ${guide.color} backdrop-blur-sm border ${guide.borderColor} hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-red-600/10 group relative overflow-hidden cursor-pointer`}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                  
-                  <CardHeader className="text-center pb-4 relative z-10">
-                    <div className="w-16 h-16 mx-auto mb-4 bg-gray-900/50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                      <IconComponent className={`w-8 h-8 ${guide.iconColor}`} />
-                    </div>
+                <CardWrapper key={guide.id} {...cardProps}>
+                  <Card
+                    className={`bg-gradient-to-br ${guide.color} backdrop-blur-sm border ${guide.borderColor} hover:scale-105 transition-all duration-300 hover:shadow-xl hover:shadow-red-600/10 group relative overflow-hidden cursor-pointer h-full`}
+                  >
+                    <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                     
-                    <CardTitle className="text-lg font-bold text-white mb-2 group-hover:text-red-400 transition-colors duration-300">
-                      {guide.title}
-                    </CardTitle>
-                    
-                    <CardDescription className="text-gray-300 text-sm leading-relaxed">
-                      {guide.description}<br />
-                      {guide.subtitle}
-                    </CardDescription>
-                  </CardHeader>
+                    <CardHeader className="text-center pb-4 relative z-10">
+                      <div className="w-16 h-16 mx-auto mb-4 bg-gray-900/50 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                        <IconComponent className={`w-8 h-8 ${guide.iconColor}`} />
+                      </div>
+                      
+                      <CardTitle className="text-lg font-bold text-white mb-2 group-hover:text-red-400 transition-colors duration-300">
+                        {guide.title}
+                      </CardTitle>
+                      
+                      <CardDescription className="text-gray-300 text-sm leading-relaxed">
+                        {guide.description}<br />
+                        {guide.subtitle}
+                      </CardDescription>
+                    </CardHeader>
 
-                  <CardContent className="pt-0 relative z-10">
-                    <Button
-                      className="w-full bg-gray-800/80 hover:bg-red-600 text-white border border-gray-700/50 hover:border-red-600/50 transition-all duration-300 group-hover:shadow-lg"
-                      size="sm"
-                    >
-                      <PlayCircle className="w-4 h-4 mr-2" />
-                      View Guide
-                    </Button>
+                    <CardContent className="pt-0 relative z-10">
+                      <Button
+                        className="w-full bg-gray-800/80 hover:bg-red-600 text-white border border-gray-700/50 hover:border-red-600/50 transition-all duration-300 group-hover:shadow-lg"
+                        size="sm"
+                      >
+                        <PlayCircle className="w-4 h-4 mr-2" />
+                        View Guide
+                      </Button>
 
-                    <div className="mt-3 text-center">
-                      <span className="text-xs text-gray-500">
-                        5-10 min setup • HD Video Tutorial
-                      </span>
+                      <div className="mt-3 text-center">
+                        <span className="text-xs text-gray-500">
+                          5-10 min setup • HD Video Tutorial
+                        </span>
+                      </div>
+                    </CardContent>
+
+                    <div className="absolute top-3 right-3 w-6 h-6 bg-red-600/20 rounded-full flex items-center justify-center">
+                      <span className="text-red-400 text-xs font-bold">{index + 1}</span>
                     </div>
-                  </CardContent>
-
-                  <div className="absolute top-3 right-3 w-6 h-6 bg-red-600/20 rounded-full flex items-center justify-center">
-                    <span className="text-red-400 text-xs font-bold">{index + 1}</span>
-                  </div>
-                </Card>
+                  </Card>
+                </CardWrapper>
               );
             })}
           </div>
