@@ -9,6 +9,7 @@ import SetupGuides from "./pages/SetupGuides";
 import AndroidSetup from "./pages/AndroidSetup";
 import FireStickSetup from "./pages/FireStickSetup";
 import SmartTVSetup from "./pages/SmartTVSetup";
+import IOSSetup from "./pages/IOSSetup";
 import ResellerProgram from "./pages/ResellerProgram";
 import AffiliateProgram from "./pages/AffiliateProgram";
 import Channels from "./pages/Channels";
@@ -30,6 +31,7 @@ const App = () => (
           <Route path="/android-setup" element={<AndroidSetup />} />
           <Route path="/firestick-setup" element={<FireStickSetup />} />
           <Route path="/smart-tv-setup" element={<SmartTVSetup />} />
+          <Route path="/ios-setup" element={<IOSSetup />} />
           <Route path="/reseller" element={<ResellerProgram />} />
           <Route path="/affiliate" element={<AffiliateProgram />} />
           <Route path="/channels" element={<Channels />} />
