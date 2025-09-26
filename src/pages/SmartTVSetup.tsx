@@ -9,11 +9,19 @@ import Footer from '@/components/Footer';
 
 const SmartTVSetup = () => {
   const [openFAQs, setOpenFAQs] = useState<{ [key: string]: boolean }>({});
+  const [openPlatforms, setOpenPlatforms] = useState<{ [key: string]: boolean }>({});
 
   const toggleFAQ = (faqId: string) => {
     setOpenFAQs(prev => ({
       ...prev,
       [faqId]: !prev[faqId]
+    }));
+  };
+
+  const togglePlatform = (platformId: string) => {
+    setOpenPlatforms(prev => ({
+      ...prev,
+      [platformId]: !prev[platformId]
     }));
   };
 
@@ -229,7 +237,7 @@ const SmartTVSetup = () => {
                 id: 'other-platforms',
                 title: 'Other Smart TVs',
                 description: 'Android TV, Roku, and other platforms',
-                icon: <Tablet className="w-8 h-8 text-red-500" />
+                icon: <Settings className="w-8 h-8 text-red-500" />
               }
             ].map((platform) => (
               <Card key={platform.id} className="bg-gray-900/30 border-gray-700 hover:border-red-500/50 transition-colors cursor-pointer">
@@ -467,7 +475,7 @@ const SmartTVSetup = () => {
               <div className="space-y-4">
                 <div className="bg-gray-900/30 rounded-lg p-4 border border-gray-700/50">
                   <div className="flex items-center space-x-3 mb-2">
-                    <Zap className="w-5 h-5 text-red-500" />
+                    <PlayCircle className="w-5 h-5 text-red-500" />
                     <h4 className="font-semibold text-white">4K Streaming</h4>
                   </div>
                   <p className="text-gray-400 text-sm">Many IPTV apps support 4K streaming if your TV and internet connection allow it.</p>
